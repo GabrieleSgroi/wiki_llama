@@ -44,6 +44,7 @@ def create_faiss_splits_db(wiki_data: List[Dict],
                           embedding=embedding_model,
                           metadatas=metadata,
                           )
+    torch.cuda.empty_cache()
     return db
 
 
@@ -58,6 +59,7 @@ def create_faiss_summary_db(wiki_data: List[Dict],
                           embedding=embedding_model,
                           metadatas=metadata,
                           )
+    torch.cuda.empty_cache()
     return db
 
 

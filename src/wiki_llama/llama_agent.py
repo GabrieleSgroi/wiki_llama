@@ -53,6 +53,7 @@ class Agent:
         print('Searching for pages using query:', self.query)
         wiki_data = get_wiki_data(query=self.query)
         print("Retrieved pages:\n", "\n".join([data['title'] for data in wiki_data]))
+        torch.cuda.empty_cache()
         return wiki_data
 
     def answer_using_wiki(self,
@@ -129,4 +130,5 @@ class Agent:
                                         max_new_tokens=max_answer_tokens,
                                         **answer_gen_kwargs
                                         )
+        torch.cuda.empty_cache()
         return answer, page, passages
