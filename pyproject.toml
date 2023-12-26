@@ -7,8 +7,8 @@ build-backend = "setuptools.build_meta"
 name = "wiki_llama"
 version = "0.1"
 
-dependencies = ["langchain==0.0.325",
-                "transformers==4.31.0",
+dependencies = ["langchain",
+                "transformers",
                 "wikipedia==1.4.0",
                 "accelerate==0.21.0",
                 "xformers==0.0.20",
